@@ -34,8 +34,12 @@
 
             <!-- Artiklar placerar sig snyggt nedanför varann-->
             <article>
-                <h2>Bloggen - Inlägg 1</h2>
+                <h2>uppg 1 - Användardata</h2>
                 <p>muminmammans memoarer</p>
+                <?php 
+                print ("hej"); 
+                ?> 
+
             </article>
             <div class="separator"></div>
 
