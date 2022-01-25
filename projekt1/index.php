@@ -18,22 +18,19 @@
         <!-- Sektionen omringar artiklar (eg. blogposts)-->
         <section>
 
-            <!-- Artiklar placerar sig snyggt nedanför varann-->
-            <article>
-                <h2>uppg 1 - Användardata</h2>
-                <p>Användarinfo</p>
-                <?php 
-                print ("Servern snurrar på port:" . $_SERVER["SERVER_PORT"] );
-                phpinfo(); 
-                ?> 
-
-            </article>
-            <div class="separator"></div>
-
-            <article>
-                <h2>Uppg 2</h2>
-                <p>Elcyklar och solkraft</p>
-            </article>
+         <?php
+            include "uppg1.php";
+            include "uppg2.php";
+            include "uppg3.php";
+            include "uppg4.php";
+            include "uppg5.php";
+            include "uppg6.php";
+            include "uppg7.php";
+            include "uppg8.php";
+            include "uppg9.php";
+            include "uppg10.php";
+         ?>
+            
 
         </section>
 
