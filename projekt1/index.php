@@ -37,7 +37,8 @@
                 <h2>uppg 1 - Användardata</h2>
                 <p>muminmammans memoarer</p>
                 <?php 
-                print ("hej"); 
+                print ("Servern snurrar på port:" . $_SERVER["SERVER_PORT"] );
+                phpinfo(); 
                 ?> 
 
             </article>
@@ -52,7 +53,7 @@
 
         <!-- Footern innehåller t.ex. somelänkar och kontaktuppg -->
         <footer>
-            Made by Dennis<sup>&#169;</sup>
+            Made by Sippe & Patrik<sup>&#169;</sup>
         </footer>
 
     </div>
