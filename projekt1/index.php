@@ -35,7 +35,7 @@
             <!-- Artiklar placerar sig snyggt nedanför varann-->
             <article>
                 <h2>uppg 1 - Användardata</h2>
-                <p>muminmammans memoarer</p>
+                <p>Användarinfo</p>
                 <?php 
                 print ("Servern snurrar på port:" . $_SERVER["SERVER_PORT"] );
                 phpinfo(); 
