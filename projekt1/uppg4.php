@@ -21,6 +21,7 @@
         mail($email, "Your password is: ", $pass);
 
         print("Singning up as " . $username .". A confirmation letter and password will be sent to " . $email);
+        
     }
 ?>
 
