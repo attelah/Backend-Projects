@@ -7,27 +7,25 @@
         År: <input type="text" name="ar"><br>
         <input type="submit" name="skicka" value="Räkna">
     </form>
-    <?php 
-    if(isset($_GET["dag"]) && !empty($_GET["manad"])){
+    <?php
+    if (isset($_GET["dag"]) && !empty($_GET["manad"])) {
         //hämta inmatad data
         $dag = $_GET["dag"];
         $manad = $_GET["manad"];
         $ar = $_GET["ar"];
-        
-        if(($dag > 0) && ($dag <= 30)){
 
-        //hitta tiden nu
-        $tidNu = time();
-        //Skapa en timestamp baserat på inmatning
-        $givenTid = mktime(12,0,0,$manad, $dag, 2022);
+        if (($dag > 0) && ($dag <= 30)) {
 
-        //använd floor() för att avrunda nedåt 
+            //hitta tiden nu
+            $tidNu = time();
+            //Skapa en timestamp baserat på inmatning
+            $givenTid = mktime(12, 0, 0, $manad, $dag, 2022);
 
-        //skriv ut variabler
-        print("det är " . $dag . "till det inmatade datumet");
+            //använd floor() för att avrunda nedåt 
 
-        }
-        else{
+            //skriv ut variabler
+            print("det är " . $dag . "till det inmatade datumet");
+        } else {
             print("din inmatning är skum?");
         }
     }
