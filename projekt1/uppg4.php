@@ -11,10 +11,16 @@
     if (!empty($_GET["username"]) && !empty($_GET["email"])) 
     {
         //hämta inmatad data
+
         $username = $_GET["username"];
         $email = $_GET["email"];
-    
-        print("Singning up as " . $username .". A confirmation letter wil be sent to " . $email);
+        
+        // To-do: skapa slumpmässigt läsenord
+        $pass = "jdfjdjdkdo";
+
+        mail($email, "Your password is: ", $pass);
+
+        print("Singning up as " . $username .". A confirmation letter and password will be sent to " . $email);
     }
 ?>
 
