@@ -22,6 +22,8 @@
 
         print("Singning up as " . $username .". A confirmation letter and password will be sent to " . $email);
         
+        $_SESSION['email'] = $email;
+        header("refresh:5; url=index.php");
     }
 ?>
 
