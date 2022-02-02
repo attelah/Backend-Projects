@@ -6,6 +6,10 @@
     $tid = date("d.M.Y");
     print("idag är det ".$tid);
     $veckodagar = array("Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag","Fredag","Lördag");
+    $dag = date("l");
+    print("idag är det ".$dag);
+
+
     ?>
 
 
