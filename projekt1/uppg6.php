@@ -1,26 +1,27 @@
 <article>
     <h2>Uppg 6</h2>
-    <p>Här är användarrprofilen</p>
-    
-<?php
+    <p>Logga in för att se din profil</p>
+    <form action="index.php">
+        användarnamn: <input type="text" name="user">
+        <button type="submit">Logga in</button>
+    </form>
 
-print("ditt användarnamn är: ".$_COOKIE['username']) . "<br>";
-print("din epost är är: ".$_SESSION['email']);
-
-
-// Vart fan ska sessionen?
-/*
-?>
-<?php
-session_start();
-?>
 
 <?php
-// Set session variables
-$_SESSION["favcolor"] = "green";
-$_SESSION["favanimal"] = "cat";
-echo "Session variables are set.";
+// Request funkar för både get och post data
+if (!empty($_REQUEST['user'])) {
+    // Stoppa XSS
+    $username = test_input($_REQUEST['user']);
+    // Lagra användarnamnet i session storage
+    $_SESSION['user'] = $username;
+    print("Signing in " . $username .". You will be redirected to your profile page in 5 secs ");
+        
+
+    header("refresh:5; url=./profile.php");
+}
+
 ?>
+
+
 </article>
 <div class="separator"></div>
-*/
