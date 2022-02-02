@@ -10,9 +10,11 @@
             <li><a href="../projekt1/">Projekt 1</a></li>
             <li><a href="../projekt2/">Projekt 2</a></li>
             <li><a href="../rapport/">Rapport</a></li>
+            
             <?php
-            if (isset($_SESSION['PHPSESSID'])) {
-                print('my profile');
+            if (isset($_COOKIE['PHPSESSID'])) {
+                // Visa länken till profilsidan om man är inloggad
+                print("<li><a href='./profile.php'>My Profile</a></li>");
             }
             ?>
         </ul>
