@@ -15,8 +15,16 @@
         $username = test_input($_GET["username"]);
         $email = test_input($_GET["email"]);
         
-        // To-do: skapa slumpmässigt läsenord
-        $pass = "jdfjdjdkdo";
+        //skapa slumpmässigt läsenord
+        $String ="Detta är texten som enkrypteras för att skapa ett slumpmässigt och säkert lösenord!";
+        $Length = 8; //Den här variabeln bestämmer lösenordets längd
+        $String = md5($String);
+        $StringLength = strlen($String);
+        srand((double) microtime() * 1000000);
+        $Begin = rand(0,($StringLength-$length-1)); //Väljer en slumpmässig startpunkt
+
+        $pass = substr($String, $Begin, $Length);
+        // PHP: Visuell Snabbguide (2002), Larry Ullman
 
         mail($email, "Your password is: ", $pass);
 
