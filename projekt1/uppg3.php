@@ -10,9 +10,9 @@
     <?php
     if (isset($_GET["dag"]) && !empty($_GET["manad"])) {
         //hämta inmatad data
-        $dag = $_GET["dag"];
-        $manad = $_GET["manad"];
-        $ar = $_GET["ar"];
+        $dag = test_input($_GET["dag"]);
+        $manad = test_input($_GET["manad"]);
+        $ar = test_input($_GET["ar"]);
 
         if (($dag > 0) && ($dag <= 30)) {
 
@@ -24,7 +24,7 @@
             //använd floor() för att avrunda nedåt 
 
             //skriv ut variabler
-            print("det är " . $dag . "till det inmatade datumet");
+            print("det är " . $dag . " till det inmatade datumet");
         } else {
             print("din inmatning är skum?");
         }

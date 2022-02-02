@@ -12,8 +12,8 @@
     {
         //hämta inmatad data
 
-        $username = $_GET["username"];
-        $email = $_GET["email"];
+        $username = test_input($_GET["username"]);
+        $email = test_input($_GET["email"]);
         
         // To-do: skapa slumpmässigt läsenord
         $pass = "jdfjdjdkdo";
