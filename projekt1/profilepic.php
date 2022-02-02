@@ -65,8 +65,4 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> b25c3017d0b2f39b1bdcf99e6a148aafdb453279
