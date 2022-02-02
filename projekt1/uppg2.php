@@ -1,6 +1,5 @@
 <article>
-    <h2>Uppg 2</h2>
-    <p>Tid och Datum</p>
+    <h2>Tid och datum - Uppg 2</h2>
 
     <?php
     $tid = date("d.M.Y");

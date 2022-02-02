@@ -2,7 +2,7 @@
 
 /* Sidhuvudet logo, firmanamn och nav */
 header {
-    background-color: #1abc9c;
+    background-color: #1a66bc;
     display: flex;  /* logon och nav är flex items */
     align-items: center;
 }
@@ -38,7 +38,7 @@ nav li > a {
     border-radius: 4px;
 }
 nav a:hover {
-    background-color: #00AA89;    /* Byter bakgrund on hover "pseudoklass" */ 
+    background-color: #134783;    /* Byter bakgrund on hover "pseudoklass" */ 
 }
 
 /* Allmängällande stilar */
@@ -57,11 +57,25 @@ body {
 article {
     margin-bottom: 30px;
     padding-left: 10px;
+    text-align: center;
+}
+
+h2 {
+    margin: 20px;
+}
+
+button {
+    padding: 5px;
+    margin: 10px;
+}
+
+input {
+    margin: 2px;
 }
 
 /* Footer */
 footer {
-    background-color: #1abc9c;
+    background-color: #124580;
     color: #fff;
     position: fixed;
     bottom: 0px;

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dennis Back-end template</title>
+    <title>Back-End Projekt 1</title>
     <link rel="stylesheet" href="../style.css">
     <script src="./script.js" defer></script>
 </head>
@@ -26,10 +26,8 @@
             include "uppg4.php";
             include "uppg5.php";
             include "uppg6.php";
-            include "uppg7.php";
             include "uppg8.php";
             include "uppg9.php";
-            include "uppg10.php";
          ?>
             
 

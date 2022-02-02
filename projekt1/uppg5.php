@@ -1,6 +1,6 @@
 <article>
-    <h2>Uppg 5</h2>
-    <p>Cookies</p>
+    <h2>Cookies - Uppg 5</h2>
+
     <?php
 
     $cookie_name = "username";

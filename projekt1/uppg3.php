@@ -1,6 +1,6 @@
 <article>
-    <h2>Uppg 3</h2>
-    <p>Användarinmatning</p>
+    <h2>Användarinmatning - Uppg 3</h2>
+
     <form action="index.php" method="get">
         Dag: <input type="text" name="dag"> <br>
         Månad: <input type="text" name="manad"><br>

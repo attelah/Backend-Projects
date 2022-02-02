@@ -14,7 +14,7 @@
             <?php
             if (isset($_COOKIE['PHPSESSID'])) {
                 // Visa länken till profilsidan om man är inloggad
-                print("<li><a href='./profile.php'>My Profile</a></li>");
+                print("<li><a href='./profile.php'>Min Profil</a></li>");
             }
             ?>
         </ul>

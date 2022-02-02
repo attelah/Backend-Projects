@@ -1,9 +1,9 @@
 <article>
-    <h2>Uppg 6</h2>
+    <h2>Login - Uppg 6</h2>
     <p>Logga in för att se din profil</p>
     <form action="index.php">
-        användarnamn: <input type="text" name="user">
-        <button type="submit">Logga in</button>
+        Användarnamn: <input type="text" name="user">
+        <br><button type="submit">Logga in</button>
     </form>
 
 

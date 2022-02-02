@@ -1,6 +1,5 @@
 <article>
-    <h2>Uppg 4</h2>
-    <p>Registrera dig på sajten</p>
+    <h2>Registeringsformulär - Uppg 4</h2>
 
     <form action="index.php" method="get">
         Användarnamn: <input type="text" name="username"> <br>

@@ -1,6 +1,6 @@
 <article>
-    <h2>Uppg 1 - Användar och serverdata</h2>
-    <p><b>Användar & Serverinfo</b></p>
+    <h2>Användar och serverdata - Uppg 1</h2>
+
     <?php 
         // phpinfo();
         echo nl2br("Användare: " . $_SERVER["REMOTE_USER"]);
