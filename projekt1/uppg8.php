@@ -7,7 +7,8 @@
     $ip = $_SERVER['REMOTE_ADDR'];
     $myfile = fopen("besok.txt","r") or die("filen gick inte att öppna!");
     print(fread($myfile,filesize("besok.txt")));
-    print("Hej ".$remote_user.", ditt bla bla bla");
+    fwrite($myfile,$remote_user." var här ".$givenTid);
+    fclose($myfile);
     ?>
 </article>
 <div class="separator"></div>
