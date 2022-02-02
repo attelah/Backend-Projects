@@ -21,6 +21,7 @@
 
         <h2>Profilsida</h2>            
 
+        <?php include "profilepic.php" ?>
         </section>
 
         <!-- Footern innehåller t.ex. somelänkar och kontaktuppg -->

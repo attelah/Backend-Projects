@@ -22,11 +22,12 @@
         $StringLength = strlen($String);
         srand((double) microtime() * 1000000);
         $Begin = rand(0,($StringLength-$length-1)); //Väljer en slumpmässig startpunkt
-
-        $pass = substr($String, $Begin, $Length);
         // PHP: Visuell Snabbguide (2002), Larry Ullman
+        
+        $pass = substr($String, $Begin, $Length);
+        
 
-        mail($email, "Your password is: ", $pass);
+        mail($email, "Your password and username", " Your username: ".$username." Your password: ".$pass);
 
         print("Singning up as " . $username .". A confirmation letter and password will be sent to " . $email);
         
