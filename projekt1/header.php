@@ -10,6 +10,11 @@
             <li><a href="../projekt1/">Projekt 1</a></li>
             <li><a href="../projekt2/">Projekt 2</a></li>
             <li><a href="../rapport/">Rapport</a></li>
+            <?php
+            if (isset($_SESSION['PHPSESSID'])) {
+                print('my profile');
+            }
+            ?>
         </ul>
     </nav>
 </header>
