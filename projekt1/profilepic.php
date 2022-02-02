@@ -34,9 +34,6 @@ if(isset($_POST["submit"])) {
     echo "<br>File is not an image.";
     $uploadOk = 0;
   }
-}
-
-if(isset($_POST["submit"])) {
 
 // Check if file already exists
 if (file_exists($target_file)) {
@@ -64,7 +61,7 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "<br>The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-    header("refresh:1; url=profile.php");
+    header("refresh:2; url=profile.php");
   } else {
     echo "<br>Sorry, there was an error uploading your file.";
   }
