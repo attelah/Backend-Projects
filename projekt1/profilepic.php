@@ -1,18 +1,22 @@
-<h2>Profilbilden</h2>
+<h2>Profilbilder</h2>
 <?php
+// Var ska bilderna lagras
 $katalog = "bilder/";
-$innehåll = scandir($katalog);
-foreach($innehåll as $rad) {
-    print(" - ".$rad."<br>");
+// Lista tidigare profilbilder
+$innehall = scandir($katalog);
+// Skriv ut innehållet av katalogen
+foreach ($innehall as $rad) {
+    print(" - " . $rad . " <br>");
 }
 ?>
+<h2>Byt profilbild</h2>
 
-<h2> Byt profilbild </h2>
-<form action ="profilbild" method="post" enctype="multiform/form-data">
-    Select image to upload:
-<input type="file" name="fileToUpload" id="fileToUpload">
-<input type="submit" value="Upload Image" name="submit">
+<form action="profile.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
 </form>
+
 <?php
 $target_dir = "bilder/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -61,4 +65,8 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> b25c3017d0b2f39b1bdcf99e6a148aafdb453279

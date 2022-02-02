@@ -19,7 +19,9 @@
         <!-- Sektionen omringar artiklar (eg. blogposts)-->
         <section>
 
-        <h2>Profilsida</h2>            
+        <h2>Profilsida</h2>
+        
+        <?php include "profilepic.php" ?>
 
         <?php include "profilepic.php" ?>
         </section>
