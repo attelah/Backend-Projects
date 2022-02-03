@@ -6,7 +6,7 @@
     $veckodagar = array("Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag","Fredag","Lördag");
     $Months = array("Januari", "Februari", "Mars", "April", "Maj","Juni","Juli", "Augusti", "October", "September", "November","December");
     $dag = date("l");
-    $manad = date("M");
+    
 
     if ($dag=="Sunday")
     {
@@ -37,9 +37,10 @@
         echo "idag är det ".$veckodagar[6];
     }
 
-    print (" den ".date("D")." ");
+    print (" den ".date("d")." ");
 
     $manad = date("n");
+
     if ($manad = 1)
     {
         echo $Months[0];
