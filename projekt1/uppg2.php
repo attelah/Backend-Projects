@@ -13,34 +13,33 @@
 
     if ($dag==[0])
     {
-       $dag = $veckodagar[0];
+        echo "idag är det ".$veckodag[0];
     }
     if ($dag==[1])
     {
-        $dag = $veckodagar[1];
+        echo "idag är det ".$veckodag[1];
     }
     if ($dag==[2])
     {
-        $dag = $veckodagar[2];
+        echo "idag är det ".$veckodag[2];
     }
     if ($dag==[3])
     {
-        $dag = $veckodagar[3];
+        echo "idag är det ".$veckodag[3];
     }
     if ($dag==[4])
     {
-        $dag = $veckodagar[4];
+        echo "idag är det ".$veckodag[4];
     }
     if ($dag==[5])
     {
-        $dag = $veckodagar[5];
+        echo "idag är det ".$veckodag[5];
     }
     if ($dag==[6])
     {
-        $dag = $veckodagar[6];
+        echo "idag är det ".$veckodag[6];
     }
-
-    print("idag är det ".$dag);
+    
 
 
     ?>
