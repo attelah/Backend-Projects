@@ -6,38 +6,38 @@
     $veckodagar = array("Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag","Fredag","Lördag");
     $Months = array("Januari", "Februari", "Mars", "April", "Maj","Juni","Juli", "Augusti", "October", "September", "November","December");
     $dag = date("l");
-    
+    $week = date("W");
 
     if ($dag=="Sunday")
     {
-        echo "idag är det ".$veckodagar[0];
+        echo "Idag är det ".$veckodagar[0];
     }
     if ($dag=="Monday")
     {
-        echo "idag är det ".$veckodagar[1];
+        echo "Idag är det ".$veckodagar[1];
     }
     if ($dag=="Tuesday")
     {
-        echo "idag är det ".$veckodagar[2];
+        echo "Idag är det ".$veckodagar[2];
     }
     if ($dag=="Wednesday")
     {
-        echo "idag är det ".$veckodagar[3];
+        echo "Idag är det ".$veckodagar[3];
     }
     if ($dag=="Thursday")
     {
-        echo "idag är det ".$veckodagar[4];
+        echo "Idag är det ".$veckodagar[4];
     }
     if ($dag=="Friday")
     {
-        echo "idag är det ".$veckodagar[5];
+        echo "Idag är det ".$veckodagar[5];
     }
     if ($dag=="Saturday")
     {
-        echo "idag är det ".$veckodagar[6];
+        echo "Idag är det ".$veckodagar[6];
     }
 
-    print (" den ".date("d")." ");
+    print (" den ".date("j")." ");
 
     $manad = date("n");
 
@@ -89,6 +89,8 @@
     {
         echo $Months[11];
     }
+
+    print (", vecka ".$week);
 
     ?>
 
