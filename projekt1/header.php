@@ -1,7 +1,7 @@
 <header>
     <!-- Logo och meny i headern -->
     <img src="../media/logo.svg" alt="Website logo" />
-    <div id="logo">PruttApp</div>
+    <div id="logo">BakÄndsAppen</div>
 
     <nav>
         <!-- Huvudmenyn -->

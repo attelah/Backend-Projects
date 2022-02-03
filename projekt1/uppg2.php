@@ -90,10 +90,10 @@
         echo $Months[11];
     }
 
-    print (", vecka ".$week);
-
+    print (", Vecka ".$week.". Vilken härlig dag!");
+    
+    //Denna vackra kodsnutt är Patriks, erkänner det här så de andra inte behöver skämmas. It works, det är det viktigaste! :D
     ?>
-
 
 </article>
 
