@@ -41,51 +41,51 @@
 
     $manad = date("n");
 
-    if ($manad = 1)
+    if ($manad == 1)
     {
         echo $Months[0];
     }
-    if ($manad = 2)
+    if ($manad == 2)
     {
         echo $Months[1];
     }
-    if ($manad = 3)
+    if ($manad == 3)
     {
         echo $Months[2];
     }
-    if ($manad = 4)
+    if ($manad == 4)
     {
         echo $Months[3];
     }
-    if ($manad = 5)
+    if ($manad == 5)
     {
         echo $Months[4];
     }
-    if ($manad = 6)
+    if ($manad == 6)
     {
         echo $Months[5];
     }
-    if ($manad = 7)
+    if ($manad == 7)
     {
         echo $Months[6];
     }
-    if ($manad = 8)
+    if ($manad == 8)
     {
         echo $Months[7];
     }
-    if ($manad = 9)
+    if ($manad == 9)
     {
         echo $Months[8];
     }
-    if ($manad = 10)
+    if ($manad == 10)
     {
         echo $Months[9];
     }
-    if ($manad = 11)
+    if ($manad == 11)
     {
         echo $Months[10];
     }
-    if ($manad = 12)
+    if ($manad == 12)
     {
         echo $Months[11];
     }
