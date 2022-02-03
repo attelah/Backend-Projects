@@ -11,31 +11,31 @@
     $dag = date("l");
     $manad = date("M");
 
-    if ($dag==[0])
+    if ($dag=="Sunday")
     {
         echo "idag är det ".$veckodag[0];
     }
-    if ($dag==[1])
+    if ($dag=="Monday")
     {
         echo "idag är det ".$veckodag[1];
     }
-    if ($dag==[2])
+    if ($dag=="Tuesday")
     {
         echo "idag är det ".$veckodag[2];
     }
-    if ($dag==[3])
+    if ($dag=="Wednesday")
     {
         echo "idag är det ".$veckodag[3];
     }
-    if ($dag==[4])
+    if ($dag=="Thursday")
     {
         echo "idag är det ".$veckodag[4];
     }
-    if ($dag==[5])
+    if ($dag=="Friday")
     {
         echo "idag är det ".$veckodag[5];
     }
-    if ($dag==[6])
+    if ($dag=="Saturday")
     {
         echo "idag är det ".$veckodag[6];
     }
