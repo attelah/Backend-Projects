@@ -34,13 +34,19 @@
 
             $future = $giventid - $tidNu;
             
+            $dygn = intdiv($future, 24);
+            
+            $hours = intdiv($future, 60);
+            $minutes = intdiv($future, 60);
+            $secs = intdiv($future, 60);
+           /*
             $sec = $future % 60;
             floor($future = ($future - $sec) / 60);
             $minutes = $future % 60;
             floor($future = ($future - $min) / 60);
             $hours = $future % 60;
             floor($future = ($future - $hours) / 60);
-            $dygn = floor($future - $hours) / 24;
+            $dygn = floor($future - $hours) / 24;*/
             
             print("det är ".$dygn. " dygn, ".$hours."timmar, ".$minutes."minuter och".$sec." tills det inmatade datumet");
 
