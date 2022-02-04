@@ -15,7 +15,7 @@
         $manad = test_input($_GET["manad"]);
         $ar = test_input($_GET["ar"]);
 
-        if (($dag > 0) && ($dag <= 30) && ($month > 0) && ($month <=12)) 
+        if (($dag > 0) && ($dag <= 30)) 
         {
             //hitta tiden nu
             $tidNu = time();
