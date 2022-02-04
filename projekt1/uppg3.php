@@ -24,9 +24,9 @@
 
             $veckodag = date("w", mktime(0,0,0,$manad,$dag,$ar));
 
-            $svedagen = $veckodagar[-1];
+            $svedagen = $veckodagar[$veckodag-1];
             //använd floor() för att avrunda nedåt 
-            echo "Datumet ".$dag.$manad.$ar."är en ".$svedagen;
+            echo "Datumet ".$dag.".".$manad.".".$ar." är en ".$svedagen;
 
             if($tidNu < $givenTid)
             {
@@ -34,6 +34,8 @@
 
             $future = $giventid - $tidNu;
             
+            print $future;
+
             $dygn = intdiv($future, 24);
             
             $hours = intdiv($future, 60);
