@@ -5,8 +5,10 @@
         Dag: <input type="text" name="dag"> <br>
         Månad: <input type="text" name="manad"><br>
         År: <input type="text" name="ar"><br>
+
         <input type="submit" name="skicka" value="Räkna">
     </form>
+    
     <?php
     if (isset($_GET["dag"]) && !empty($_GET["manad"])) 
     {
@@ -15,65 +17,66 @@
         $manad = test_input($_GET["manad"]);
         $ar = test_input($_GET["ar"]);
 
-        if (($dag > 0) && ($dag <= 30)) 
+        if (($dag > 0 && $dag <= 31) && ($manad > 0 && $manad <= 12)) 
         {
             //hitta tiden nu
             $tidNu = time();
+            $hNu = time("H");
+            $mNu = time("i");
+            $sNu = time("s");
             //Skapa en timestamp baserat på inmatning
-            $givenTid = mktime(12, 0, 0, $manad, $dag, $ar);
+            $givenTid = mktime($hNu, $mNu, $sNu, $manad, $dag, $ar);
 
-            $veckodag = date("w", mktime(0,0,0,$manad,$dag,$ar));
+            $veckodag = date("w", mktime($hNu, $mNu, $sNu, $manad, $dag, $ar));
 
-            $svedagen = $veckodagar[$veckodag-1];
+            $svedagen = $veckodagar[$veckodag];
             //använd floor() för att avrunda nedåt 
-            echo "Datumet ".$dag.".".$manad.".".$ar." är en ".$svedagen;
+            echo "<br>Datumet ".$dag.".".$manad.".".$ar." är en ".$svedagen. "<br>";
+            echo "<br>";
             
-            echo $tidNu."<br>";
-            echo $givenTid."<br>";
-
-            if($tidNu < $givenTid)
+           if ($givenTid > $tidNu)
             {
-            echo "Det givna datumet är i framtiden!";
+            echo "Det givna datumet är i framtiden! <br><br> ";
 
-            $future = $tidNu - $givenTid;
+            $future = $givenTid-$tidNu;
             
-            print $future;
-
-            $dygn = intdiv($future, 24);
-            
-            $hours = intdiv($future, 60);
-            $minutes = intdiv($future, 60);
-            $secs = intdiv($future, 60);
-           /*
             $sec = $future % 60;
-            floor($future = ($future - $sec) / 60);
-            $minutes = $future % 60;
-            floor($future = ($future - $min) / 60);
-            $hours = $future % 60;
-            floor($future = ($future - $hours) / 60);
-            $dygn = floor($future - $hours) / 24;*/
-            
-            print("det är ".$dygn. " dygn, ".$hours."timmar, ".$minutes."minuter och".$sec." tills det inmatade datumet");
+            $future = ($future - $sec) / 60;
+            $min = $future % 60;
+            $future = ($future - $min) / 60;
+            $hours = $future % 24;
+            $dygn = floor($future / 24);
+
+
+            print("det är ".$dygn. " dygn, ".$hours."timmar, ".$min."minuter och".$sec." sekunder tills det inmatade datumet");
 
             }
-            if($tidNu > $givenTid)
+            else if ($givenTid < $tidNu)
+            {
+                echo "Det givna datumet är i det förflutna! <br>";
+
+                $future = $tidNu - $givenTid;
+            
+                $sec = $future % 60;
+                $future = ($future - $sec) / 60;
+                $min = $future % 60;
+                $future = ($future - $min) / 60;
+                $hours = $future % 24;
+                $dygn = floor($future / 24)-1;
+
+                print("det är ".$dygn. " dygn, ".$hours."timmar, ".$min."minuter och".$sec." sekunder sedan det inmatade datumet");
+            }
+            
+           /* if($tidNu > $givenTid)
             {
 
             echo "Det givna datumet är i det förflutna!";
 
-            $future = $tidNu - $giventid;
-            
-
-            $dygn = $future / 86400;
-            $hours = $dygn / 3600;
-            $minutes = $hours / 60;
-            
-            
 
             //skriv ut variabler
             print("det är " . $givenTid . " till det inmatade datumet");
 
-            }
+            }*/
         }
          else {
             print("din inmatning är skum?");
