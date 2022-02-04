@@ -32,7 +32,7 @@
             {
             echo "Det givna datumet är i framtiden!";
 
-            $future = $giventid - $tidNu;
+            $future = $tidNu - $givenTid;
             
             print $future;
 
