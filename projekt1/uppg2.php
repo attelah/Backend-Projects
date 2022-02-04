@@ -5,13 +5,13 @@
    
     $veckodagar = array("Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag","Fredag","Lördag");
     $Months = array("Januari", "Februari", "Mars", "April", "Maj","Juni","Juli", "Augusti", "October", "September", "November","December");
-    $dag = date("w");
+    $dagi = date("w");
     $week = date("W");
-    $manad = date("n");
+    $manadi = date("n");
     $datnum = date("j");    
 
-    $day = $veckodagar[$dag-1];
-    $month = $Months[$manad-1];
+    $day = $veckodagar[$dagi-1];
+    $month = $Months[$manadi-1];
 
     print ("Idag är det ".$day." den " .$datnum." " .$month. ", Vecka ".$week.". Vilken härlig dag!");
     
