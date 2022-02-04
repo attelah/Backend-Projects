@@ -27,6 +27,9 @@
             $svedagen = $veckodagar[$veckodag-1];
             //använd floor() för att avrunda nedåt 
             echo "Datumet ".$dag.".".$manad.".".$ar." är en ".$svedagen;
+            
+            echo $tidNu."<br>";
+            echo $givenTid."<br>";
 
             if($tidNu < $givenTid)
             {
