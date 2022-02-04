@@ -48,7 +48,7 @@
             $dygn = floor($future / 24);
 
 
-            print("det är ".$dygn. " dygn, ".$hours."timmar, ".$min."minuter och".$sec." sekunder tills det inmatade datumet");
+            print("det är ".$dygn. " dygn, ".$hours."timmar, ".$min."minuter och ".$sec." sekunder tills det inmatade datumet");
 
             }
             else if ($givenTid < $tidNu)
@@ -64,7 +64,7 @@
                 $hours = $future % 24;
                 $dygn = floor($future / 24)-1;
 
-                print("det är ".$dygn. " dygn, ".$hours."timmar, ".$min."minuter och".$sec." sekunder sedan det inmatade datumet");
+                print("det är ".$dygn. " dygn, ".$hours."timmar, ".$min."minuter och ".$sec." sekunder sedan det inmatade datumet");
             }
             
            /* if($tidNu > $givenTid)
