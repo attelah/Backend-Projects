@@ -12,14 +12,17 @@
 if (!empty($_REQUEST['user'])) {
     // Stoppa XSS
     $username = test_input($_REQUEST['user']);
-    // Lagra användarnamnet i session storage
-    $_SESSION['user'] = $username;
-    print("Signing in " . $username .". You will be redirected to your profile page in 5 secs ");
-        
-
-    header("refresh:5; url=./profile.php");
 }
 
+if ($username == "tennis") {
+        // Lagra användarnamnet i session storage
+        $_SESSION['user'] = $username;
+        print("Signing in as " . $username .". You will be redirected to your profile page in 3 secs ");
+        header("refresh:3; url=./profile.php");
+}
+else if (!empty($_REQUEST['user'])) {
+    print("Wrong username! (Hint: tennis)");
+}
 ?>
 
 

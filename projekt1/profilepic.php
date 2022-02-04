@@ -1,19 +1,33 @@
 <article>
-<h2>Profilbilder</h2>
+
 <?php
-// Var ska bilderna lagras
-$katalog = "bilder/";
-// Lista tidigare profilbilder
-$innehall = scandir($katalog);
-// Skriv ut innehållet av katalogen
-foreach ($innehall as $rad) {
-    print(" - " . $rad . " <br>");
+// Koden lånad från https://stackoverflow.com/questions/6557980/how-can-i-display-latest-uploaded-image-first-phpcss
+$path = "bilder/";
+$files = scandir($path);
+$ignore = array('Thumbs.db', '.', '..');
+
+# removing ignored files
+$files = array_filter($files, function($file) use ($ignore) {return !in_array($file, $ignore);});
+
+# getting the modification time for each file
+$times = array_map(function($file) use ($path) {return filemtime("$path/$file");}, $files);
+
+# sort the times array while sorting the files array as well
+array_multisort($times, SORT_DESC, SORT_NUMERIC, $files);
+
+  echo "<h2>Nuvarande profilbild</h2>";
+  echo '<img width="100px" src="bilder/' . $files[0] . '" />';
+  echo "<h2>Tidigare profilbilder</h2>";
+foreach ($files as $file) {
+  echo '<img width="100px" src="bilder/' . $file . '" />';
 }
+
 ?>
+
 <h2>Byt profilbild</h2>
 
 <form action="profile.php" method="post" enctype="multipart/form-data">
-  Select an image to upload:
+  Ladda upp en ny profilbild:
   <input type="file" name="fileToUpload" id="fileToUpload"><br>
   <input type="submit" value="Upload Image" name="submit"><br>
 </form>
@@ -23,6 +37,7 @@ $target_dir = "bilder/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -48,9 +63,9 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 }
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-  echo "<br>Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+// Endast JPG och PNG
+if($imageFileType != "jpg" && $imageFileType != "png") {
+  echo "<br>Sorry, only JPG & PNG files are allowed.";
   $uploadOk = 0;
 }
 
@@ -65,7 +80,27 @@ if ($uploadOk == 0) {
   } else {
     echo "<br>Sorry, there was an error uploading your file.";
   }
+
 }
 }
 ?>
+
+<h2>Uppladdade filer:</h2>
+<?php
+// Var ska bilderna lagras
+$katalog = "bilder/";
+// Lista tidigare profilbilder
+$innehall = scandir($katalog);
+// Skriv ut innehållet av katalogen
+foreach ($innehall as $rad) {
+  // Om file extension är uppercase så visas den inte på listan, så checkar alla som lowercase
+  // Filtrerar . och .. och allt annat än jpg och png från listan
+  $lowercase = strtolower($rad);
+  if (strstr($lowercase, "jpg") || (strstr($lowercase, "png"))) {
+    echo "<a href='./".$katalog."/".$rad."'>".$rad."</a><br>";
+  }
+
+}
+?>
+
 </article>

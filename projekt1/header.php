@@ -12,7 +12,7 @@
             <li><a href="../rapport/">Rapport</a></li>
             
             <?php
-            if (isset($_COOKIE['PHPSESSID'])) {
+            if (($_SESSION['user']) !== null) {
                 // Visa länken till profilsidan om man är inloggad
                 print("<li><a href='./profile.php'>Min Profil</a></li>");
             }
