@@ -14,17 +14,17 @@
         $manad = test_input($_GET["manad"]);
         $ar = test_input($_GET["ar"]);
 
-        if (($dag > 0) && ($dag <= 30)) {
+        if (($dag > 0) && ($dag <= 31)) {
 
             //hitta tiden nu
             $tidNu = time();
             //Skapa en timestamp baserat på inmatning
-            $givenTid = mktime(12, 0, 0, $manad, $dag, 2022);
+            $givenTid = mktime(12, 0, 0, $manad, $dag, $ar);
 
             //använd floor() för att avrunda nedåt 
 
             //skriv ut variabler
-            print("det är " . $dag . " till det inmatade datumet");
+            print("det är " . $givenTid . " till det inmatade datumet");
         } else {
             print("din inmatning är skum?");
         }
