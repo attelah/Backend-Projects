@@ -1,7 +1,13 @@
 <article>
 
 <?php
-// Koden lånad från https://stackoverflow.com/questions/6557980/how-can-i-display-latest-uploaded-image-first-phpcss
+// Blockar hela sidan om man inte är inloggad
+if ($_SESSION['user'] == null) {
+    header("refresh:0; url=./index.php");
+    die();
+}
+
+// Sorterings koden https://stackoverflow.com/questions/6557980/how-can-i-display-latest-uploaded-image-first-phpcss
 $path = "bilder/";
 $files = scandir($path);
 $ignore = array('Thumbs.db', '.', '..');
@@ -76,7 +82,7 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "<br>The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-    header("refresh:2; url=profile.php");
+    header("refresh:2");
   } else {
     echo "<br>Sorry, there was an error uploading your file.";
   }

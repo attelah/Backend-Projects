@@ -10,8 +10,10 @@
 </head>
 
 <?php
+// Blockar hela sidan om man inte är inloggad
 if ($_SESSION['user'] == null) {
-    header("refresh:0; url=../index.php");
+    header("refresh:0; url=./index.php");
+    die();
 }
 ?>
 
