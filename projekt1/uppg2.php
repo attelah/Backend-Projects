@@ -13,7 +13,7 @@
     $day = $veckodagar[$dag-1];
     $month = $Months[$manad-1];
 
-    print ("idag är det ".$day." den " .$datnum." " .$month. ", Vecka ".$week.". Vilken härlig dag!");
+    print ("Idag är det ".$day." den " .$datnum." " .$month. ", Vecka ".$week.". Vilken härlig dag!");
     
     ?>
 
