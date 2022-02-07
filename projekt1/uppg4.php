@@ -26,9 +26,9 @@
         $pass = substr($String, $Begin, $Length);
         
 
-        mail($email, "Your password and username", " Your username: ".$username." Your password: ".$pass);
+        mail($email, "Ditt lösenord", " Ditt användarnamn: ".$username."<br> Ditt lösenord: ".$pass);
 
-        print("Singning up as " . $username .". A confirmation letter and password will be sent to " . $email);
+        print("Registrerar dig som " . $username .". Ett bekräftelsemeddelande samt ditt nya lösenord skickas till " . $email);
         
         $_SESSION['email'] = $email;
         header("refresh:5; url=index.php");
