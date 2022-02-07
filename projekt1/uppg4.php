@@ -21,10 +21,9 @@
         $StringLength = strlen($String);
         srand((double) microtime() * 1000000);
         $Begin = rand(0,($StringLength-$length-1)); //Väljer en slumpmässig startpunkt
-        // PHP: Visuell Snabbguide (2002), Larry Ullman
-        
+        //Skapa det slutliga lösenordet
         $pass = substr($String, $Begin, $Length);
-        
+        // PHP: Visuell Snabbguide (2002), Larry Ullman
 
         mail($email, "Ditt lösenord", " Ditt användarnamn: ".$username."<br> Ditt lösenord: ".$pass);
 
