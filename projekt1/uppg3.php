@@ -19,25 +19,26 @@
 
         if (($dag > 0 && $dag <= 31) && ($manad > 0 && $manad <= 12)) 
         {
-            //hitta tiden nu
+            
             $tidNu = time();
             $hNu = time("H");
             $mNu = time("i");
             $sNu = time("s");
-            //Skapa en timestamp baserat på inmatning
+           
             $givenTid = mktime($hNu, $mNu, $sNu, $manad, $dag, $ar);
 
             $veckodag = date("w", mktime($hNu, $mNu, $sNu, $manad, $dag, $ar));
 
             $svedagen = $veckodagar[$veckodag];
-            //använd floor() för att avrunda nedåt 
+            
             echo "<br>Datumet ".$dag.".".$manad.".".$ar." är en ".$svedagen. "<br>";
             echo "<br>";
+            
             
            if ($givenTid > $tidNu)
             {
             echo "Det givna datumet är i framtiden! <br><br> ";
-
+                
             $future = $givenTid-$tidNu;
             
             $sec = $future % 60;
@@ -66,17 +67,7 @@
 
                 print("det är ".$dygn. " dygn, ".$hours."timmar, ".$min."minuter och ".$sec." sekunder sedan det inmatade datumet");
             }
-            
-           /* if($tidNu > $givenTid)
-            {
 
-            echo "Det givna datumet är i det förflutna!";
-
-
-            //skriv ut variabler
-            print("det är " . $givenTid . " till det inmatade datumet");
-
-            }*/
         }
          else {
             print("din inmatning är skum?");
