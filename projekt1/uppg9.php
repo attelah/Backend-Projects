@@ -15,20 +15,19 @@
             $postDate = date("d.m.Y");
             $BloggText = test_input( $_POST['bloggText']);
             $content = 
-            "användare: " . $postUser . ", Klockan: " . $postTimestamp . " Den " . $postDate ."<br> <br>" .
+            "Användare: " . $postUser . ", Klockan: " . $postTimestamp . " Den " . $postDate ."<br> <br>" .
             $BloggText ." <br> <br> <br> <br>";
 
             echo $content;
 
-            $fp = fopen($bloggFileName, 'r+');
+            $fp = fopen($bloggFileName, 'a');
             fwrite($fp, $content);
             fclose($fp);
 
             //file_put_contents($bloggFileName, $content, FILE_APPEND);
         }
 
-        //echo "Klockan: " . date("H:i") . " Den " . date("d.m.Y");
-        //include $bloggFileName;
+        include $bloggFileName;
     
     ?>
     

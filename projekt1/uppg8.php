@@ -29,8 +29,8 @@ if (is_writable($filename)) {
 
     // Räknar hur många lines filen har
     $count = 0;
-    while ($line = fgetss($fp)) { $count++; };
-    echo "<b>Unika besök: " . $count."</b><br>";
+    while ($line = fgets($fp)) { $count++; };
+    echo "<b>Unika besök: " . $count. "</b><br>";
 
     fclose($fp);
 
