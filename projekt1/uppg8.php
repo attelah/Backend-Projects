@@ -27,20 +27,26 @@ if (is_writable($filename)) {
         }
     }
 
-    // Räknar hur många lines filen har
-    $count = 0;
-    while ($line = fgetss($fp)) { $count++; };
-    echo "<b>Unika besök: " . $count."</b><br>";
-
     fclose($fp);
 
 } else {
     echo "The file $filename is not writable";
 }
+
+    // Öppnar filen pånytt för att räkna raderna efter möijlig ny text i filen.
+    $fp = fopen($filename, 'a+');
+    // Räknar hur många lines filen har
+    $count = 0;
+    while ($line = fgetss($fp)) {$count++;};
+    echo "<b>Unika besök: " . $count . "</b><br>";
+    fclose($fp);
+
+    // Måste söka ny file content ifall nytt text skriven i filen
+    $filecontent = file_get_contents($filename);
 ?>
 
 <!--Visar textfilens innehåll i en textarea-->
-<br><textarea id='visits'  rows="10" cols="53" disabled><?php print($filecontent);?></textarea>
+<br><textarea id='visits'  rows="10" cols="55" disabled><?php print($filecontent);?></textarea>
 
 </article>
 <div class="separator"></div>
