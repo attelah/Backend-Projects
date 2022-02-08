@@ -23,7 +23,7 @@
         $Begin = rand(0,($StringLength-$length-1)); //Väljer en slumpmässig startpunkt
         //Skapa det slutliga lösenordet
         $pass = substr($String, $Begin, $Length);
-        // PHP: Visuell Snabbguide (2002), Larry Ullman
+        // PHP: Visuell Snabbguide (2002), Larry Ullman. s. 64-65.
 
         mail($email, "Ditt lösenord", " Ditt användarnamn: ".$username."<br> Ditt lösenord: ".$pass);
 
