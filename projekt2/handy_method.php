@@ -14,5 +14,7 @@ function test_input($data) {
 $servername ="localhost";
 $dbname = "kindstep";
 $username = "kindstep";
-include "hemlis.php"
+include "hemlis.php";
+
+$conn = new PDO("mysql:host=".$servername.";dbname=".$dbname."charset=UTF8", $username, $password); // Uppkopplingen mellan php och mysql databasen (konstr. metoden)
 ?>

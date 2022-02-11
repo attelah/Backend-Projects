@@ -20,14 +20,7 @@
         <section>
 
          <?php
-            include "uppg1.php";
-            include "uppg2.php";
-            include "uppg3.php";
-            include "uppg4.php";
-            include "uppg5.php";
-            include "uppg6.php";
-            include "uppg8.php";
-            include "uppg9.php";
+            include "view_register.php"
          ?>
             
 
