@@ -20,7 +20,8 @@
         <section>
 
          <?php
-            include "view_register.php"
+            include "user_login.php";
+            include "view_register.php";
          ?>
             
 

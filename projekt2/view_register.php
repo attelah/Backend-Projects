@@ -24,17 +24,17 @@
 
 if(!empty($_REQUEST['username']) && !empty($_REQUEST['password']) && !empty($_REQUEST['email']))
 {
-$username = test_input($_REQUEST['username']);
-$email = test_input($_REQUEST['email']);
-$password = test_input($_REQUEST['password']);
+$username = test_input($_REQUEST["username"]);
+$email = test_input($_REQUEST["email"]);
+$password = test_input($_REQUEST["password"]);
 $password = hash("sha256", $password);
-$fullname = test_input($_REQUEST['fullname']);
-$city = test_input($_REQUEST['city']);
-$salary = test_input($_REQUEST['salary']);
-$aboutme = test_input($_REQUEST['aboutme']);
-$preference = $_REQUEST['preference'];
+$fullname = test_input($_REQUEST["fullname"]);
+$city = test_input($_REQUEST["city"]);
+$salary = test_input($_REQUEST["salary"]);
+$aboutme = test_input($_REQUEST["aboutme"]);
+$preference = $_REQUEST["preference"];
 
-$sql = "INSERT INTO annonser(id, username, fullname, 'password', email, city, aboutme, salary, preference) VALUES (NULL,?,?,?,?,?,?,?,?);";
+$sql = "INSERT INTO annonser(id, username, fullname, password, email, city, aboutme, salary, preference) VALUES (NULL,?,?,?,?,?,?,?,?);";
 $stmt = $conn->prepare($sql);
     if ($stmt->execute([$username, $fullname, $password, $email, $city, $aboutme, $salary, $preference])) 
     {  
