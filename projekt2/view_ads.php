@@ -15,10 +15,4 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC))// fetch_assoc() är en metod av mys
 }
 ?>
 
-
-}
-
-
-?>
-
 </article>

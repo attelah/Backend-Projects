@@ -10,11 +10,12 @@
             <li><a href="../projekt2/view_register.php">Login/Registrera</a></li>
             <li><a href="../rapport/">Rapport</a></li>
             
-            <?php
-            if (($_SESSION['user']) !== null) {
+           <?php
+             /*if (($_SESSION['username']) !== null) {
                 // Visa länken till profilsidan om man är inloggad
                 print("<li><a href='./profile.php'>Min Profil</a></li>");
             }
+            */
             ?>
         </ul>
     </nav>

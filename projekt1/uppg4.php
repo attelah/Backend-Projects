@@ -17,7 +17,7 @@
         //skapa slumpmässigt läsenord
         $String ="Detta är texten som enkrypteras för att skapa ett slumpmässigt och säkert lösenord!";
         $Length = 8; //Den här variabeln bestämmer lösenordets längd
-        $String = md5($String);
+        $String = md5($String); //krypterar strängen, men borde kanske vara sha256 nuförtiden
         $StringLength = strlen($String);
         srand((double) microtime() * 1000000);
         $Begin = rand(0,($StringLength-$length-1)); //Väljer en slumpmässig startpunkt

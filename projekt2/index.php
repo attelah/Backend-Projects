@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Back-End Projekt 1</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -20,7 +19,8 @@
         <section>
 
          <?php
-            include "view_ads.php"
+            include "view_ads.php";
+            include "view_register.php";
          ?>
             
 
