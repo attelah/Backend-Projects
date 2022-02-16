@@ -13,7 +13,7 @@
            <?php
              if (($_SESSION['username']) !== null) {
                 // Visa länken till profilsidan om man är inloggad
-                print("<li><a href='./profile.php'>Min Profil</a>Min Profil </li>");
+                print("<li><a href='./profile.php'>Min Profil</a></li>");
                 print("<li></a>Logga Ut</li>");
             }
             ?>
