@@ -18,11 +18,14 @@
 
         <!-- Sektionen omringar artiklar (eg. blogposts)-->
         <section>
+        <?php if (!empty($_REQUEST['page']) && $_REQUEST['page'] == "login") : ?>
+         <?php include "view_login.php"; ?>
 
-         <?php
-            include "user_login.php";
-            include "view_register.php";
-         ?>
+         <?php else: ?>
+
+            <?php include "view_register.php"; ?>
+
+            <?php endif; ?>
             
 
         </section>

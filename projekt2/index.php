@@ -20,8 +20,6 @@
 
          <?php
             include "view_ads.php";
-            include "user_login.php";
-            include "view_register.php";
          ?>
             
 

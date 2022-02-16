@@ -1,6 +1,6 @@
 <article>
 
-<form action="index.php" method="get">
+<form action="view_register.php" method="get">
         Användarnamn: <input type="text" name="username"> <br>
         Lösenord: <input type="text" name="password"><br>
         E-post: <input type="email" name="email"><br>
@@ -19,7 +19,7 @@
         Berätta om dig själv: <input type="text" name="aboutme"><br>
         <input type="submit" name="skicka" value="Registrera dig">
     </form>
-
+Har du redan ett konto <a href="login.php?page=login"> logga in här </a>
 <?php
 
 if(!empty($_REQUEST['username']) && !empty($_REQUEST['password']) && !empty($_REQUEST['email']))
@@ -46,7 +46,7 @@ $stmt = $conn->prepare($sql);
     print("Du har registrerats!");
     }
 }
-else
+else //to do: se tilla att man inte kan registrera likadana användarnamn
 {
     print "Användarnamnet är redan taget! Välj ett annat användarnamn.";
 }
