@@ -10,28 +10,30 @@ lösenord: <input type="password" name="password"><br>
 
 if(!empty($_REQUEST['username']) && !empty($_REQUEST['password']))
 {
-$uname = test_input($_REQUEST["username"]);
-$pword = test_input($_REQUEST["password"]);
-$pword = hash("sha256", $pword);
+$username = test_input($_REQUEST["username"]);
+$password = test_input($_REQUEST["password"]);
+$password = hash("sha256", $password);
 
-$sql = "SELECT*FROM annonser";// SQL kommandot vi vill köra
+$sql = "SELECT * FROM `annonser` WHERE `username` LIKE $username AND `password` LIKE $password";// SQL kommandot vi vill köra
 $stmt = $conn->query($sql); // Query är metoden. Returnerar FALSE eller mysqli_result objekt
 
-$controlname = $stmt->fetch(PDO::FETCH_OBJ,'username');
-$controlpword = $stmt->fetch(PDO::FETCH_OBJ,'password');
+echo $username;
+echo $password;
 
-if($uname == $controlname && $ $pword == $controlpword)
-{    
+while($row = $stmt->fetch(PDO::FETCH_ASSOC))// fetch_assoc() är en metod av mysqli_result  
+    {
+if($username == $controlname && $ $password == $controlpword)
+        {    
     session_start();
     $_SESSION['username']=session_id();
 
-    while($row = $stmt->fetch(PDO::FETCH_ASSOC))// fetch_assoc() är en metod av mysqli_result  
-    {
+    
+    
         print("Välkommen tillbaks: ".$row['salary']."<br>");
 
+    
+        }
     }
-}
-
 }
 ?>
 </article>

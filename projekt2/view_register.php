@@ -34,12 +34,22 @@ $salary = test_input($_REQUEST["salary"]);
 $aboutme = test_input($_REQUEST["aboutme"]);
 $preference = $_REQUEST["preference"];
 
+$sql = "SELECT * FROM `annonser` WHERE `username` LIKE $username";
+$stmt = $conn->query($sql);
+
+if($username != $stmt)
+{
 $sql = "INSERT INTO annonser(id, username, fullname, password, email, city, aboutme, salary, preference) VALUES (NULL,?,?,?,?,?,?,?,?);";
 $stmt = $conn->prepare($sql);
     if ($stmt->execute([$username, $fullname, $password, $email, $city, $aboutme, $salary, $preference])) 
     {  
     print("Du har registrerats!");
     }
+}
+else
+{
+    print "Användarnamnet är redan taget! Välj ett annat användarnamn.";
+}
 }
 ?>
 </article>
