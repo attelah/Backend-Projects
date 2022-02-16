@@ -12,7 +12,7 @@
             <li><a href="../rapport/">Rapport</a></li>
             
            <?php $username = ($_SESSION['username']);?>
-           <?php if (($_SESSION['username']) == $username) : ?>
+           <?php if(!isset($_SESSION['username']) == null) : ?>
             
                <!-- Visa länken till profilsidan och "log out" om man är inloggad-->
 
