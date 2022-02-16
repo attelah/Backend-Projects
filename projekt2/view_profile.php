@@ -18,7 +18,7 @@
             <form action="profile.php" method="get">
             <!-- Om ni sätter php bland html, kom ihåg att inget syns innan print -->
         Användarnamn: <input type="text" name="username" value=" <?php print($username); ?>"> <br>
-        Lösenord: <input type="text" name="password"><br>
+        Lösenord: <input type="text" name="password"><br> 
         E-post: <input type="email" name="email"><br>
         <h2>Info till din profil:</h2><br>
         <!-- Shorthand syntax för php print sparar lite tecken -->
