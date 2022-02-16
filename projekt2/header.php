@@ -7,15 +7,15 @@
         <!-- Huvudmenyn -->
         <ul>
             <li><a href="../home/">Home</a></li>
-            <li><a href="../projekt2/view_register.php">Login/Registrera</a></li>
+            <li><a href="../projekt2/login.php">Login/Registrera</a></li>
             <li><a href="../rapport/">Rapport</a></li>
             
            <?php
-             /*if (($_SESSION['username']) !== null) {
+             if (($_SESSION['username']) !== null) {
                 // Visa länken till profilsidan om man är inloggad
-                print("<li><a href='./profile.php'>Min Profil</a></li>");
+                print("<li><a href='./profile.php'>Min Profil</a>Min Profil </li>");
+                print("<li></a>Logga Ut</li>");
             }
-            */
             ?>
         </ul>
     </nav>

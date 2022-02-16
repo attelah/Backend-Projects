@@ -1,6 +1,6 @@
 <article>
 
-<form action="view_register.php" method="get">
+<form action="login.php" method="get">
         Användarnamn: <input type="text" name="username"> <br>
         Lösenord: <input type="text" name="password"><br>
         E-post: <input type="email" name="email"><br>
@@ -34,10 +34,11 @@ $salary = test_input($_REQUEST["salary"]);
 $aboutme = test_input($_REQUEST["aboutme"]);
 $preference = $_REQUEST["preference"];
 
-$sql = "SELECT * FROM `annonser` WHERE `username` LIKE $username";
-$stmt = $conn->query($sql);
+$sql = "SELECT * FROM `annonser` WHERE `username` = ?";
+$stmt = $conn->prepare($sql);
+$stmt->execute([$username]);
 
-if($username != $stmt)
+if(!$stmt->fetchObject()) 
 {
 $sql = "INSERT INTO annonser(id, username, fullname, password, email, city, aboutme, salary, preference) VALUES (NULL,?,?,?,?,?,?,?,?);";
 $stmt = $conn->prepare($sql);
@@ -46,9 +47,9 @@ $stmt = $conn->prepare($sql);
     print("Du har registrerats!");
     }
 }
-else //to do: se tilla att man inte kan registrera likadana användarnamn
+else 
 {
-    print "Användarnamnet är redan taget! Välj ett annat användarnamn.";
+    print ("Användarnamnet är redan taget! Välj ett annat användarnamn.");
 }
 }
 ?>

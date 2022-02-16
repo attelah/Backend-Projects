@@ -19,12 +19,12 @@ $sql = "SELECT `username`,`password`,`fullname`  FROM `annonser` WHERE `username
 $stmt = $conn->prepare($sql);
 $stmt->execute([$username,$password]);
 
-if($stmt->fetchObject(PDO::FETCH_ASSOC))
+if($stmt->fetchObject())
 {       
     print("Välkommen tillbaka ".$row['fullname']);
     //spara username i sessionen för att hålla login aktiv
     $_SESSION['username']=session_id();                    
-    header("refresh:5, url:profile.php");
+    header("refresh:5, url=profile.php");
     //To do: Logga ut med session_destroy
 } 
 }
