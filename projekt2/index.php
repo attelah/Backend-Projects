@@ -22,7 +22,7 @@
             include "view_ads.php";
          ?>
             
-
+<?php print("Du är lloggad in som ".$username);?>
         </section>
 
         <footer>

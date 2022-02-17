@@ -4,7 +4,6 @@
 
     <?php
     // hämta profildata
-        //hämta profildata
         $username = test_input($_SESSION['username']);
         $sql = "SELECT username,`password`,email,fullname,city,salary,preference,aboutme FROM annonser WHERE username = ?";
         $stmt = $conn->prepare($sql);
