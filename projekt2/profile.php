@@ -21,6 +21,7 @@
          <?php if (!empty($_SESSION['username']) ) {
         // Profilvyn
         include "view_profile.php";
+        include "view_comments.php";
          }
          else {
              print("<a href='login.php'>Logga in för att se din profil</a>");
