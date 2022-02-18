@@ -25,7 +25,7 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC))
     print("Du blir omdirigerad till din profilsida om 5 sekunder");
     //spara username i sessionen för att hålla login aktiv
     $_SESSION['username'] = $username; 
-    $_SESSION['recieverID'] = $row['id'];                   
+    $_SESSION['recieverId'] = $row['id'];
     header("Refresh:1; url=profile.php");
     //To do: Loggout  knapp i headern med session_destroy
 } 
