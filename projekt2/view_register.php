@@ -1,6 +1,6 @@
 <article>
 
-<form action="login.php" method="get">
+<form action="login.php" method="post">
         Användarnamn: <input type="text" name="username"> <br>
         Lösenord: <input type="text" name="password"><br>
         E-post: <input type="email" name="email"><br>

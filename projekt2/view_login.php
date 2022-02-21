@@ -1,6 +1,6 @@
 <article>
 
-<form action="login.php" method="GET">
+<form action="login.php" method="post">
 Användarnamn: <input type="text" name="username"><br>
 lösenord: <input type="password" name="password"><br>
 <input type="hidden" name="page" value="login">
@@ -24,7 +24,8 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC))
     print("Välkommen tillbaka ".$row['fullname']."!<br>");
     print("Du blir omdirigerad till din profilsida om 5 sekunder");
     //spara username i sessionen för att hålla login aktiv
-    $_SESSION['username'] = $username;                    
+    $_SESSION['username'] = $username; 
+    $_SESSION['receiverId'] = $row['id'];                   
     header("Refresh:1; url=profile.php");
     //To do: Loggout  knapp i headern med session_destroy
 } 
