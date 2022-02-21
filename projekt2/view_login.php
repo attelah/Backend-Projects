@@ -15,7 +15,7 @@ $username = test_input($_REQUEST["username"]);
 $password = test_input($_REQUEST["password"]);
 $password = hash("sha256", $password);
 
-$sql = "SELECT `username`,`password`,`fullname`  FROM `annonser` WHERE `username` = ? AND `password` = ?";// SQL för att "prata" med databasen
+$sql = "SELECT `id`,`username`,`password`,`fullname`  FROM `annonser` WHERE `username` = ? AND `password` = ?";// SQL för att "prata" med databasen
 $stmt = $conn->prepare($sql);
 $stmt->execute([$username,$password]);
 
