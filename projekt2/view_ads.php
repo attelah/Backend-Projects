@@ -17,7 +17,6 @@
   <label for="asc">321 z->a</label><br> 
 <br>
 <input type="submit" value="Sortera">
-
 </form>
 
 <?php $username = ($_SESSION['username']);?>
@@ -64,25 +63,43 @@ $order = "salary";
   $stmt = $conn->query($sql);
   $stmt->execute([$order]);
 }
+?>
 
-while($row = $stmt->fetch(PDO::FETCH_ASSOC))// fetch_assoc() är en metod av mysqli_result  
-{ 
-  print("<br>");
-  print("Användarnamn: ".$row['username']."<br>"); // Endast ett resultat? Lämna bort while
+<?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?> 
+
+ <?php print("<br>");
+  print("Användarnamn: ".$row['username']."<br>"); 
   print("Namn: ".$row["fullname"]."<br>"); 
   print("Stad: ".$row["city"]."<br>");
   $preferens =  $row["preference"];
   $preferens = $könis[$preferens-1];
   print("Jag söker efter: ".$preferens."<br>"); 
   print("Mer om mig: ".$row["aboutme"]."<br>"); 
-  if(!isset($_SESSION['username']) == null)
-  {
+  print("<br>")
+  ?>
+
+  <?php if(!isset($_SESSION['username']) == null) :
     print("Inkomst: ".$row["salary"]."€/år <br>"); 
     print("Kontakta mig: ".$row["email"]."<br>"); 
-    
-  }
-  print("<br>");
+    print("<br>"); 
+  ?>
+
+ <h5>Likes:</h5>
+ <form>
+<form action='index.php' method='POST'>
+<input type='hidden' name='liked' value=".$row['id'].">
+<input type='submit' name='submit' value='Like'>
+</form>
+
+<?php 
+if(isset($_POST['submit']))
+{
+$likedAnnons = $_POST['liked'];
+echo $_POST['liked'];
 }
 ?>
+
+<?php endif;?>
+<?php endwhile; ?>
 
 </article>
