@@ -22,7 +22,7 @@
         Nuvarande Lösenordet: <input type="password" name="passwordOld"><br>
         Nya Lösenordet:  <input type="password" name="passwordNew"><br><br>
         <h2>MIN ANNONS</h2><br>
-        <!-- Shorthand syntax för php preint sparar lite tecken -->
+        <!-- Shorthand syntax för php print sparar lite tecken -->
         Ditt hela namn: <input type="text" name="fullname" value="<?=$row['fullname']?>"><br>
         Hemstad: <input type="text" name="city" value="<?= $row['city']?>"><br>
         Årlig inkomst: <input type="number" name="salary" value="<?=$row['salary']?>"><br>

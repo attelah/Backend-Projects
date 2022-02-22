@@ -18,10 +18,10 @@
 
         <!-- Sektionen omringar artiklar (eg. blogposts)-->
         <section>
-        <?php if (!empty($_REQUEST['page']) && $_REQUEST['page'] == "login") : ?>
-            <?php include "view_login.php"; ?> 
-            <?php else: ?>
+        <?php if (!empty($_REQUEST['page']) && $_REQUEST['page'] == "register") : ?>
             <?php include "view_register.php"; ?>
+            <?php else: ?>
+            <?php include "view_login.php"; ?> 
             <?php endif; ?>
             
 

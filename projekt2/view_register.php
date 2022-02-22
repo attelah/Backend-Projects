@@ -17,7 +17,9 @@
             <option value="5">Vill inte specifiera</option>
         </select><br>
         Berätta om dig själv: <input type="text" name="aboutme"><br>
+        <input type="hidden" name="page" value="register">
         <input type="submit" name="skicka" value="Registrera dig">
+        
     </form>
 Har du redan ett konto <a href="login.php?page=login"> logga in här </a>
 <?php

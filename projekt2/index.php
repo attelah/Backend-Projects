@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back-End Projekt 1</title>
+    <title>Back-End Projekt 2</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -22,7 +22,6 @@
             include "view_ads.php";
          ?>
             
-<?php print("Du är lloggad in som ".$username);?>
         </section>
 
         <footer>
