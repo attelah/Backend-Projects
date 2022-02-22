@@ -1,6 +1,6 @@
 <?php
 //Hemligt lösenord
-$password = "BZhyt7DN5M";
-$dbname = "engbloki";
-$username = "engbloki";
+$password = "SSPcfEsr8g";
+$dbname = "kindstep";
+$username = "kindstep";
 ?>
