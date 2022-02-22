@@ -11,8 +11,7 @@
             <li><a href="../projekt2/login.php">Login/Registrera</a></li>
             <li><a href="../rapport/">Rapport</a></li>
             
-           <?php $username = ($_SESSION['username']);?>
-           <?php if(!isset($_SESSION['username']) == null) : ?>
+           <?php if(!empty($_SESSION['username'])) : ?>
             
                <!-- Visa länken till profilsidan och "log out" om man är inloggad-->
 
