@@ -3,17 +3,17 @@
 
 <form action="index.php" method="post">
 <p>Sortera annonser enligt:</p>
-  <input type="radio" id="salary" name="orderby" value="salary">
+  <input type="radio" id="salary" name="orderby" value="salary" checked="checked">
   <label for="salary">Inkomst</label><br>
-  <input type="radio" id="city" name="orderby"  value="city">
+  <input type="radio" id="city" name="orderby" value="city">
   <label for="city">Hemstad</label><br>
-  <input type="radio" id="pref" name="orderby"  value="preference">
+  <input type="radio" id="pref" name="orderby" value="preference">
   <label for="preference">Preferens</label><br> 
   <br>
   <p>Ordning:</p>
-  <input type="radio" id="desc" name="descasc"  value="DESC">
+  <input type="radio" id="desc" name="descasc" value="DESC" checked="checked">
   <label for="desc">123 a->z</label><br>
-  <input type="radio" id="asc" name="descasc"  value="ASC">
+  <input type="radio" id="asc" name="descasc" value="ASC">
   <label for="asc">321 z->a</label><br> 
 <br>
 <input type="submit" value="Sortera">
