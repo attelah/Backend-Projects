@@ -1,6 +1,6 @@
 <header>
     <!-- Logo och meny i headern -->
-    <img src="../media/logo.svg" alt="Website logo" />
+    <img src="../media/logo2.svg" alt="Website logo" />
     <div id="logo">BakÄndsAppen</div>
     <link rel="stylesheet" href="../style.css">
 
