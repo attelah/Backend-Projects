@@ -98,22 +98,19 @@ $order = "salary";
     print("<br>"); 
   ?>
 
- <h5>Likes:</h5>
- <form>
-<form action='index.php' method='POST'>
-<input type='hidden' name='liked' value=".$row['id'].">
-<input type='submit' name='submit' value='Like'>
-</form>
 
-<?php 
-if(isset($_POST['submit']))
-{
-$likedAnnons = $_POST['liked'];
-echo $_POST['liked'];
-}
+<?php
+
+echo "<h5>+" . $row['likes'] . " -" . $row['dislikes'] . "</h5>";
+echo "<form action='index.php' method='POST'>";
+echo "<input type='hidden' name='liked' value=" . $row['id'] . ">";
+echo "<input type='submit' name='like' value='Like'>";
+echo "<input type='submit' name='dislike' value='Dislike'>";
+echo "</form>";
+
 ?>
 
 <?php endif;?>
 <?php endwhile; ?>
-
+<?php include "like.php"?>
 </article>
