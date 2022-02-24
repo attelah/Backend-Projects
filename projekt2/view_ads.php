@@ -113,6 +113,16 @@ $order = "salary";
 
 <?php
 
+if ($row['id'] !== $_SESSION['userId']) {
+echo "<br><br>";
+echo "<form action='index.php' method='POST'>";
+echo "<textarea name='comment' cols='30' rows='3'></textarea>";
+echo "<input type='hidden' name='commentId' value=" . $row['id'] . ">";
+echo "<br>";
+echo "<input type='submit' name='submitComment' value='Submit Comment'>";
+echo "</form>";
+}
+
 echo "<h2>+" . $row['likes'] . " -" . $row['dislikes'] . "</h2>";
 if ($row['id'] !== $_SESSION['userId']) {
 echo "<form action='index.php' method='POST'>";
@@ -126,4 +136,5 @@ echo "</form>";
 <?php endif;?>
 <?php endwhile; ?>
 <?php include "like.php"?>
+<?php include "comment.php"?>
 </article>

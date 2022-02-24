@@ -7,19 +7,15 @@
     <nav>
         <!-- Huvudmenyn -->
         <ul>
-            <li><a href="../projekt2/index.php">Home</a></li>
-            <li><a href="../projekt2/login.php">Login/Registrera</a></li>
-            
-           <?php if(!empty($_SESSION['username'])) : ?>
-            
-               <!-- Visa länken till profilsidan och "log out" om man är inloggad-->
+            <li><a href="../projekt2/index.php">Annonser</a></li>
 
-               <?php
+            <!-- Visa länken till profilsidan och "log out" om man är inloggad-->
+           <?php if(!empty($_SESSION['username'])) {
                 print("<li><a href='./profile.php'>Min Profil</a></li>");
                 print("<li><a href='./logout.php'>Logga Ut</a></li>");
-                ?>
-            
-            <?php endif; ?>
+           }
+           else print("<li><a href='../projekt2/login.php'>Login/Registrera</a></li>");
+            ?>
         </ul>
     </nav>
 </header>
