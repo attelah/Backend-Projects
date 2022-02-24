@@ -34,9 +34,6 @@
 <input type="submit" value="Sortera">
 </form>
 
-<?php $username = ($_SESSION['username']);?>
-
-
 <?php
 
 $könis = array("Män", "Kvinnor", "Män och Kvinnor", "Vad som helst!", "vill inte specifiera");

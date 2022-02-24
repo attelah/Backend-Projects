@@ -20,7 +20,7 @@
         <br>
         Berätta om dig själv:
         <br>
-        <textarea name="comment" cols="40" rows="6"></textarea><br>
+        <textarea name="aboutme" cols="40" rows="6"></textarea><br>
         <input type="hidden" name="page" value="register">
         <input type="submit" name="skicka" value="Registrera dig">
         </form>
