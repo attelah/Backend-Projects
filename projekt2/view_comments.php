@@ -6,7 +6,7 @@
     // hämta profildata
         $username = test_input($_SESSION['username']);
         //$recieverId = test_input($_SESSION["receiverId"]);
-        $recieverId = $_SESSION['userId'];
+        $recieverId = 5 /*$_SESSION['userId']*/;
         $sql = "SELECT kommentarer.comment,annonser.username FROM kommentarer INNER JOIN annonser ON kommentarer.senderId = annonser.id WHERE kommentarer.recieverId = ? ORDER BY kommentarer.timestamp";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$recieverId]);
