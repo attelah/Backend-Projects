@@ -34,9 +34,6 @@
 <input type="submit" value="Sortera">
 </form>
 
-<?php $username = ($_SESSION['username']);?>
-
-
 <?php
 
 $könis = array("Män", "Kvinnor", "Män och Kvinnor", "Vad som helst!", "vill inte specifiera");
@@ -113,7 +110,7 @@ $order = "salary";
 
 <?php
 
-if ($row['id'] !== $_SESSION['userId']) {
+if (isset($_SESSION['username']) && $row['id'] !== $_SESSION['userId']) {
 echo "<br><br>";
 echo "<form action='index.php' method='POST'>";
 echo "<textarea name='comment' cols='30' rows='3'></textarea>";
@@ -124,7 +121,7 @@ echo "</form>";
 }
 
 echo "<h2>+" . $row['likes'] . " -" . $row['dislikes'] . "</h2>";
-if ($row['id'] !== $_SESSION['userId']) {
+if (isset($_SESSION['username']) && $row['id'] !== $_SESSION['userId']) {
 echo "<form action='index.php' method='POST'>";
 echo "<input type='hidden' name='liked' value=" . $row['id'] . ">";
 echo "<input type='submit' name='like' value='Like'>";
