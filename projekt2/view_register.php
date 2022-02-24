@@ -25,7 +25,7 @@
         <input type="submit" name="skicka" value="Registrera dig">
         </form>
         <br>
-Har du redan ett konto <a href="login.php?page=login"> logga in här </a>
+Har du redan ett konto <a href="login.php?page=login"> Logga in här </a>
 <?php
 
 if(!empty($_REQUEST['username']) && !empty($_REQUEST['password']) && !empty($_REQUEST['email']))
@@ -52,6 +52,7 @@ $stmt = $conn->prepare($sql);
     {  
     print("Du har registrerats!");
     }
+    $_SESSION['username'] = $username;
 }
 else 
 {
