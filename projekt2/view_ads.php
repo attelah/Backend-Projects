@@ -83,7 +83,7 @@ $order = "salary";
 
 
  <?php 
-  print("<br>");
+  print("<br><br><br>");
   print("Användarnamn: ".$row['username']."<br>"); 
   print("Namn: ".$row["fullname"]."<br>"); 
   print("Stad: ".$row["city"]."<br>");
@@ -96,14 +96,13 @@ $order = "salary";
 
   <?php if(!isset($_SESSION['username']) == null) :
     print("Inkomst: ".$row["salary"]."€/år <br>"); 
-    print("Kontakta mig: ".$row["email"]."<br>"); 
-    print("<br>"); 
+    print("Kontakta mig: ".$row["email"]); 
   ?>
 
 
 <?php
 
-echo "<h5>+" . $row['likes'] . " -" . $row['dislikes'] . "</h5>";
+echo "<h2>+" . $row['likes'] . " -" . $row['dislikes'] . "</h2>";
 if ($row['id'] !== $_SESSION['userId']) {
 echo "<form action='index.php' method='POST'>";
 echo "<input type='hidden' name='liked' value=" . $row['id'] . ">";
