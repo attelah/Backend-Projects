@@ -2,8 +2,8 @@
 if(isset($_REQUEST['submitComment'])){
 
 $addComment = $conn->prepare('INSERT INTO kommentarer
-(senderId , recieverId , comment)
-VALUES (:senderId, :recieverId , :comment)');
+(senderId , receiverId , comment)
+VALUES (:senderId, :receiverId , :comment)');
 //binder värdena till placeholders
 $comment = test_input($_REQUEST['comment']);
 $addComment->bindParam(":senderId" , $_SESSION['userId'], PDO::PARAM_STR);
