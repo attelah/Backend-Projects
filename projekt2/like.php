@@ -10,13 +10,12 @@ if (isset($_POST['like'])) {
     $totalLikes = $row['likes'];
 
     // Check if post is already liked or if own post
-    $sql = 'SELECT annonsId FROM likes WHERE userId=?';
+    $sql = 'SELECT userId,annonsId FROM likes WHERE userId=? AND annonsId=?';
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$userId]);
+    $stmt->execute([$userId,$likedAnnons]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    $result = $row['annonsId'];
 
-    if (!$result && $result !== $userId) {
+    if (!$row['annonsId'] && !$row['userId']) {
         // Update likes
         $n = $totalLikes + 1;
         $sql = 'UPDATE annonser SET likes=? WHERE id=?';
@@ -26,6 +25,7 @@ if (isset($_POST['like'])) {
         $sql = 'INSERT INTO likes (userId, annonsId) VALUES (?,?)';
         $stmt = $conn->prepare($sql);
         $stmt->execute([$userId, $likedAnnons]);
+        header("Refresh:0; url=index.php");
     }
 
 }
@@ -43,13 +43,12 @@ if (isset($_POST['dislike'])) {
     $totalDislikes = $row['dislikes'];
 
     // Check if post is already liked or if own post
-    $sql = 'SELECT annonsId FROM dislikes WHERE userId=?';
+    $sql = 'SELECT userId,annonsId FROM dislikes WHERE userId=? AND annonsId=?';
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$userId]);
+    $stmt->execute([$userId,$likedAnnons]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    $result = $row['annonsId'];
 
-    if (!$result && $result !== $userId) {
+    if (!$row['annonsId'] && !$row['userId']) {
         // Update likes
         $n = $totalDislikes + 1;
         $sql = 'UPDATE annonser SET dislikes=? WHERE id=?';
@@ -59,6 +58,7 @@ if (isset($_POST['dislike'])) {
         $sql = 'INSERT INTO dislikes (userId, annonsId) VALUES (?,?)';
         $stmt = $conn->prepare($sql);
         $stmt->execute([$userId, $likedAnnons]);
+        header("Refresh:0; url=index.php");
     }
 
 }

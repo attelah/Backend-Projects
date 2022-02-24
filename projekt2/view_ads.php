@@ -81,7 +81,9 @@ $order = "salary";
 
 <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?> 
 
- <?php print("<br>");
+
+ <?php 
+  print("<br>");
   print("Användarnamn: ".$row['username']."<br>"); 
   print("Namn: ".$row["fullname"]."<br>"); 
   print("Stad: ".$row["city"]."<br>");
@@ -102,12 +104,13 @@ $order = "salary";
 <?php
 
 echo "<h5>+" . $row['likes'] . " -" . $row['dislikes'] . "</h5>";
+if ($row['id'] !== $_SESSION['userId']) {
 echo "<form action='index.php' method='POST'>";
 echo "<input type='hidden' name='liked' value=" . $row['id'] . ">";
 echo "<input type='submit' name='like' value='Like'>";
 echo "<input type='submit' name='dislike' value='Dislike'>";
 echo "</form>";
-
+}
 ?>
 
 <?php endif;?>
