@@ -9,6 +9,10 @@
   <label for="city">Hemstad</label><br>
   <input type="radio" id="pref" name="orderby" value="preference">
   <label for="preference">Preferens</label><br> 
+  <input type="radio" id="likes" name="orderby" value="likes">
+  <label for="likes">Likes</label><br> 
+  <input type="radio" id="dislikes" name="orderby" value="dislikes">
+  <label for="dislikes">Dislikes</label><br> 
   <br>
   <p>Ordning:</p>
   <input type="radio" id="desc" name="descasc" value="DESC" checked="checked">
@@ -46,6 +50,16 @@ $stmt = $conn->query($sql);
     break;
   case "preference":
     $sql = "SELECT * FROM annonser ORDER BY preference $descasc LIMIT 30";
+    $stmt = $conn->query($sql);
+      $stmt->execute();
+    break;
+  case "likes":
+    $sql = "SELECT * FROM annonser ORDER BY likes $descasc LIMIT 30";
+    $stmt = $conn->query($sql);
+      $stmt->execute();
+    break;
+  case "dislikes":
+    $sql = "SELECT * FROM annonser ORDER BY dislikes $descasc LIMIT 30";
     $stmt = $conn->query($sql);
       $stmt->execute();
     break;
