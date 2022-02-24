@@ -5,10 +5,10 @@
     <?php
     // hämta profildata
         $username = test_input($_SESSION['username']);
-        $receiverId = $_SESSION['userId'];
-        $sql = "SELECT kommentarer.comment,annonser.username,annonser.id FROM kommentarer INNER JOIN annonser ON kommentarer.senderId = annonser.id WHERE kommentarer.receiverId = ? ORDER BY kommentarer.timestamp LIMIT 8";
+        $recieverId = $_SESSION['userId'];
+        $sql = "SELECT kommentarer.comment,annonser.username,annonser.id FROM kommentarer INNER JOIN annonser ON kommentarer.senderId = annonser.id WHERE kommentarer.recieverId = ? ORDER BY kommentarer.timestamp LIMIT 8";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$receiverId]);
+        $stmt->execute([$recieverId]);
         ?>
         <!-- Alternative syntax för conditionals -->
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
