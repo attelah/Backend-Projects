@@ -52,7 +52,6 @@ $stmt = $conn->prepare($sql);
     {  
     print("Du har registrerats!");
     }
-    $_SESSION['username'] = $username;
 }
 else 
 {
