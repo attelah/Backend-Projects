@@ -9,7 +9,6 @@
         <ul>
             <li><a href="../projekt2/index.php">Home</a></li>
             <li><a href="../projekt2/login.php">Login/Registrera</a></li>
-            <li><a href="../rapport/">Rapport</a></li>
             
            <?php if(!empty($_SESSION['username'])) : ?>
             

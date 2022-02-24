@@ -18,7 +18,18 @@
   <input type="radio" id="desc" name="descasc" value="DESC" checked="checked">
   <label for="desc">123 a->z</label><br>
   <input type="radio" id="asc" name="descasc" value="ASC">
-  <label for="asc">321 z->a</label><br> 
+  <label for="asc">321 z->a</label><br>
+<br>
+<label for="preference">Hur många annonser vill du se?</label>
+        <select id="amount" name="amount">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select><br> 
+
 <br>
 <input type="submit" value="Sortera">
 </form>
@@ -35,31 +46,32 @@ if(!empty($_REQUEST['orderby']) && !empty($_REQUEST['descasc']))
 
 $order = test_input($_REQUEST["orderby"]);
 $descasc = test_input($_REQUEST["descasc"]);
+$srclimit = test_input($_REQUEST["amount"]);
 
 switch ($order)
  {
   case "salary":
-    $sql = "SELECT * FROM annonser ORDER BY salary $descasc LIMIT 30";
+    $sql = "SELECT * FROM annonser ORDER BY salary $descasc LIMIT $srclimit";
 $stmt = $conn->query($sql);
   $stmt->execute();
     break;
   case "city":
-    $sql = "SELECT * FROM annonser ORDER BY city $descasc LIMIT 30";
+    $sql = "SELECT * FROM annonser ORDER BY city $descasc LIMIT $srclimit";
 $stmt = $conn->query($sql);
   $stmt->execute();
     break;
   case "preference":
-    $sql = "SELECT * FROM annonser ORDER BY preference $descasc LIMIT 30";
+    $sql = "SELECT * FROM annonser ORDER BY preference $descasc LIMIT $srclimit";
     $stmt = $conn->query($sql);
       $stmt->execute();
     break;
   case "likes":
-    $sql = "SELECT * FROM annonser ORDER BY likes $descasc LIMIT 30";
+    $sql = "SELECT * FROM annonser ORDER BY likes $descasc LIMIT $srclimit";
     $stmt = $conn->query($sql);
       $stmt->execute();
     break;
   case "dislikes":
-    $sql = "SELECT * FROM annonser ORDER BY dislikes $descasc LIMIT 30";
+    $sql = "SELECT * FROM annonser ORDER BY dislikes $descasc LIMIT $srclimit";
     $stmt = $conn->query($sql);
       $stmt->execute();
     break;
@@ -89,7 +101,6 @@ $order = "salary";
   $preferens = $könis[$preferens-1];
   print("Jag söker efter: ".$preferens."<br>"); 
   print("Mer om mig: ".$row["aboutme"]."<br>"); 
-  print("<br>")
   ?>
 
   <?php if(!isset($_SESSION['username']) == null) :

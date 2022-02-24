@@ -1,10 +1,11 @@
 <article>
-
+<br>
+<h1>Användarinformation:</h1>
 <form action="login.php" method="post">
         Användarnamn: <input type="text" name="username"> <br>
         Lösenord: <input type="text" name="password"><br>
         E-post: <input type="email" name="email"><br>
-        <h2>Info till din profil:</h2><br>
+        <h1>Info till din profil:</h1>
         Ditt hela namn: <input type="text" name="fullname"><br>
         Hemstad: <input type="text" name="city"><br>
         Årlig inkomst: <input type="number" name="salary"><br>
@@ -16,11 +17,14 @@
             <option value="4">Vad som helst!</option>
             <option value="5">Vill inte specifiera</option>
         </select><br>
-        Berätta om dig själv: <input type="text" name="aboutme"><br>
+        <br>
+        Berätta om dig själv:
+        <br>
+        <textarea name="comment" cols="40" rows="6"></textarea><br>
         <input type="hidden" name="page" value="register">
         <input type="submit" name="skicka" value="Registrera dig">
-        
-    </form>
+        </form>
+        <br>
 Har du redan ett konto <a href="login.php?page=login"> logga in här </a>
 <?php
 

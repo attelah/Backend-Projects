@@ -1,11 +1,13 @@
 <article>
-
+<br>
+    <h1>Logga in på din profil för att kontakta andra singlar på vår sida!</h1>
+<br>
 <form action="login.php" method="post">
 Användarnamn: <input type="text" name="username"><br>
 lösenord: <input type="password" name="password"><br>
 <input type="hidden" name="page" value="login">
 <input type="submit" value="Login">
-</form>
+</form><br>
 Inget konto? <a href="login.php?page=register">Registrera dig här</a><br>
 <?php
 
@@ -22,11 +24,11 @@ $stmt->execute([$username,$password]);
 if($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {       
     print("Välkommen tillbaka ".$row['fullname']."!<br>");
-    print("Du blir omdirigerad till din profilsida om 5 sekunder");
+    print("Du blir omdirigerad till din profilsida om 3 sekunder");
     //spara username i sessionen för att hålla login aktiv
     $_SESSION['username'] = $username; 
     $_SESSION['userId'] = $row['id'];                   
-    header("Refresh:1; url=profile.php");
+    header("Refresh:3; url=profile.php");
     //To do: Loggout  knapp i headern med session_destroy
 } 
 }
