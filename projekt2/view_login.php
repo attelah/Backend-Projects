@@ -4,7 +4,7 @@
 <br>
 <form action="login.php" method="post">
 Användarnamn: <input type="text" name="username"><br>
-lösenord: <input type="password" name="password"><br>
+Lösenord: <input type="password" name="password"><br>
 <input type="hidden" name="page" value="login">
 <input type="submit" value="Login">
 </form><br>

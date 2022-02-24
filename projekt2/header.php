@@ -1,4 +1,4 @@
-<header>
+<header class="h">
     <!-- Logo och meny i headern -->
     <img src="../media/logo2.svg" alt="Website logo" />
     <div id="logo">BakÄndsAppen</div>
