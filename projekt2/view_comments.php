@@ -1,6 +1,6 @@
 <article>
     <h2>Här är kommentarerna på din annons</h2>
-    <p>Svara med en kommentar genom att skrive en kommentar i avsändarens annons</p>
+    <p>Svara med en kommentar genom att skriva en kommentar i avsändarens annons</p>
 
     <?php
     // hämta profildata

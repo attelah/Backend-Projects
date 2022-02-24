@@ -32,7 +32,7 @@
             <option value="1"<?php if($row['preference'] == '1'){echo("selected");}?>>Män</option>
             <option value="2"<?php if($row['preference'] == '2'){echo("selected");}?>>Kvinnor</option>
             <option value="3"<?php if($row['preference'] == '3'){echo("selected");}?>>Män & Kvinnor</option>
-            <option value="4"<?php if($row['preference'] == '4'){echo("selected");}?>>Vad som hällst</option>
+            <option value="4"<?php if($row['preference'] == '4'){echo("selected");}?>>Vad som helst!</option>
             <option value="5"<?php if($row['preference'] == '5'){echo("selected");}?>>Vill inte specifiera</option>
         </select><br>
         Berätta om dig själv: <input type="text" name="aboutme" value="<?=$row['aboutme']?>"><br>
