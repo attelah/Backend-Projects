@@ -42,9 +42,9 @@ $stmt->execute([$username]);
 
 if(!$stmt->fetchObject()) 
 {
-$sql = "INSERT INTO annonser(id, username, fullname, password, email, city, aboutme, salary, preference) VALUES (NULL,?,?,?,?,?,?,?,?);";
+$sql = "INSERT INTO annonser(id, username, fullname, password, email, city, aboutme, salary, preference, likes, dislikes) VALUES (NULL,?,?,?,?,?,?,?,?,?,?);";
 $stmt = $conn->prepare($sql);
-    if ($stmt->execute([$username, $fullname, $password, $email, $city, $aboutme, $salary, $preference])) 
+    if ($stmt->execute([$username, $fullname, $password, $email, $city, $aboutme, $salary, $preference, 0, 0])) 
     {  
     print("Du har registrerats!");
     }
