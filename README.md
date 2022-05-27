@@ -1,2 +1,2 @@
-# backend
-Two projects in the backend course
+# Backend
+Two backend school projects
