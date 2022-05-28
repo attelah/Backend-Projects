@@ -1,5 +1,5 @@
 # Backend
-Two backend projects in the first backend school course. First project includes different tasks, second project is a dating site.
+Two backend projects from the first backend school course. First project includes different tasks, second project is a dating site.
 
 # Project 1
 ![image](https://user-images.githubusercontent.com/4623879/170738728-7b5e3d3b-2c38-43db-952c-47924c9e3adf.png)
